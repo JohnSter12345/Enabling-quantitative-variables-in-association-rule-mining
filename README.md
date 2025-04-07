@@ -73,6 +73,14 @@ For more advanced handling of missing data:
 
 Both methods achieve perfect recall, but logistic regression slightly outperforms the heuristic approach in terms of precision and F1-score, using fewer rules.
 
+### How were `top_n` values chosen?
+
+For the **heuristic method**, we evaluated classifiers using different numbers of top-ranked rules (based on individual precision, recall, or F1).  
+The best `top_n` was selected as the configuration achieving the **highest global F1-score** across the dataset.
+
+For **logistic regression**, we incrementally evaluated model performance using the top-N rules ranked by their absolute logistic coefficients.  
+We selected `top_n = 2` as it gave the **optimal F1-score** with the smallest set of rules — a great trade-off b
+
 **Heuristic (Top 5):**
 - `GDF_15`
 - `NOT HCT AND NOT Lymphocytes AND NOT Notch_1`
