@@ -43,12 +43,24 @@ This allows the model to **learn combinations and weights of rules** rather than
 
 ## Missing Data Handling
 
-For both approaches, we carefully handle missing values (`NA`) in the dataset:
+Some rows in the dataset contain missing biomarker values (`NA`), making it impossible to fully evaluate certain rules.
 
-- If **any required biomarker is missing** in a row for a given rule, that row is **excluded from evaluation** for that rule.
-- This ensures we don't make false predictions or distort performance metrics due to incomplete data.
+To handle this consistently across all methods, we apply the following strategy:
 
-We chose this strict approach to maintain result reliability and avoid misclassification driven by uncertainty.
+> If a rule cannot be evaluated due to missing data, it is treated as **not matching** (i.e., `False`).
+
+This ensures:
+- A complete binary feature matrix (no rows are dropped),
+- Compatibility with models like `LogisticRegression`, which do **not support `NaN`**,
+- A simple, unified rule evaluation process across both heuristic and machine learning approaches.
+
+### Future Extensions
+
+For more advanced handling of missing data:
+- Use models like `XGBoost`, `LightGBM`, or `CatBoost` which support `NaN` values natively,
+- Consider ternary encoding:  
+  `1 = True`, `0 = False`, `-1 = Unknown` — to explicitly reflect uncertainty.
+
 
 ---
 
