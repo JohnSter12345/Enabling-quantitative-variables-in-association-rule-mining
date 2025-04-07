@@ -52,15 +52,26 @@ We chose this strict approach to maintain result reliability and avoid misclassi
 
 ---
 
-## Summary
+## Results
 
-| Feature                            | Heuristic (Top-N) | Machine Learning (LogReg) |
-|-----------------------------------|-------------------|----------------------------|
-| Rule weighting                    | No                | Yes                        |
-| Inter-rule interaction            | No                | Yes                        |
-| Custom interpretability           | High              | Medium                     |
-| Sensitive to missing data         | No (rows skipped) | No (rows skipped)          |
-| Automation                        | Manual (sorted)   | Learned (fitted model)     |
+| Method               | Top-N Rules | Precision | Recall | F1-score |
+|----------------------|-------------|-----------|--------|----------|
+| Top-N Heuristic      | 5           | 0.8333    | 1.0000 | 0.9091   |
+| Logistic Regression  | 2           | 0.8571    | 1.0000 | 0.9231   |
+
+Both methods achieve perfect recall, but logistic regression slightly outperforms the heuristic approach in terms of precision and F1-score, using fewer rules.
+
+**Heuristic (Top 5, sorted by precision):**
+- `GDF_15`
+- `NOT HCT AND NOT Lymphocytes AND NOT Notch_1`
+- `SOST`
+- `Neutrophils`
+- `NOT Hb AND NOT Lymphocytes AND NOT Notch_1`
+
+**Logistic Regression (Top 2):**
+- `GDF_15`
+- `NOT Hb AND NOT Lymphocytes AND NOT Notch_1`
+
 
 ---
 
