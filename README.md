@@ -61,7 +61,7 @@ We chose this strict approach to maintain result reliability and avoid misclassi
 
 Both methods achieve perfect recall, but logistic regression slightly outperforms the heuristic approach in terms of precision and F1-score, using fewer rules.
 
-**Heuristic (Top 5, sorted by precision):**
+**Heuristic (Top 5):**
 - `GDF_15`
 - `NOT HCT AND NOT Lymphocytes AND NOT Notch_1`
 - `SOST`
@@ -79,7 +79,7 @@ Both methods achieve perfect recall, but logistic regression slightly outperform
 
 - `rules.txt` – original rules in plain text.
 - `dataset.tsv` – biomedical dataset used for evaluation.
-- `notebook.ipynb` – full analysis pipeline with plots, metrics and model results.
+- `rule-based_classification.ipynb` – full analysis pipeline with plots, metrics and model results.
 
 ---
 
