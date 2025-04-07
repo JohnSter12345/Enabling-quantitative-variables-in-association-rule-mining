@@ -68,8 +68,8 @@ For more advanced handling of missing data:
 
 | Method               | Top-N Rules | Precision | Recall | F1-score |
 |----------------------|-------------|-----------|--------|----------|
-| Top-N Heuristic      | 5           | 0.8333    | 1.0000 | 0.9091   |
-| Logistic Regression  | 2           | 0.8571    | 1.0000 | 0.9231   |
+| Top-N Heuristic      |      5      | 0.8333    | 1.0000 | 0.9091   |
+| Logistic Regression  |      2      | 0.8571    | 1.0000 | 0.9231   |
 
 Both methods achieve perfect recall, but logistic regression slightly outperforms the heuristic approach in terms of precision and F1-score, using fewer rules.
 
