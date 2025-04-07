@@ -87,6 +87,3 @@ Both methods achieve perfect recall, but logistic regression slightly outperform
 
 Open the notebook in JupyterLab or VS Code and execute all cells from top to bottom.  
 You can easily switch between methods, tweak thresholds, or add new rules for experimentation.
-
-
-0...................................................................................................................
