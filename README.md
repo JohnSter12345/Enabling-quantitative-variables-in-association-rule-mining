@@ -79,7 +79,7 @@ For the **heuristic method**, we evaluated classifiers using different numbers o
 The best `top_n` was selected as the configuration achieving the **highest global F1-score** across the dataset.
 
 For **logistic regression**, we incrementally evaluated model performance using the top-N rules ranked by their absolute logistic coefficients.  
-We selected `top_n = 2` as it gave the **optimal F1-score** with the smallest set of rules — a great trade-off b
+We selected `top_n = 2` as it gave the **optimal F1-score** with the smallest set of rules — a great trade-off between performance and interpretability.
 
 **Heuristic (Top 5):**
 - `GDF_15`
