@@ -77,8 +77,4 @@ We chose this strict approach to maintain result reliability and avoid misclassi
 Open the notebook in JupyterLab or VS Code and execute all cells from top to bottom.  
 You can easily switch between methods, tweak thresholds, or add new rules for experimentation.
 
----
 
-## 📌 License
-
-MIT License – use freely, but cite this repository if you build on it.
